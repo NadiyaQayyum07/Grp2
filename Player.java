@@ -6,6 +6,7 @@ public class Player {
 
     private String myWord;
     public  String guessWord;
+    public String opponentword;
 
     public Player(String myWord) {
         this.myWord = myWord;
@@ -16,18 +17,26 @@ public class Player {
 
     }
 
+
+
     public boolean isWin(){
 
-        return false;
+        return myWord.equals(opponentword);
     }
 
     public String guessWord(){
+
+        Arraylist.get((int)(Math.random()ArrayList.length()));
 
         return null;
     }
 
     public int tellMatchedCount(String anotherPlayerWord){
-
-        return 1;
+        char [] Word = anotherPlayerWord.toLowerCase().toCharArray();
+        int count =0;
+        for(char alphabet: Word){
+            if(myWord.contains(alphabet)) count++;
+        }
+        return count;
     }
 }
